@@ -2,6 +2,9 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles';
+import Settings from '../settings/Settings';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,40 +17,18 @@ const useStyles = makeStyles((theme) => ({
   nav:{
     width:'100%',
     height:'100px',
-    border:'solid 1px black'
+    display:'flex',
+    alignItems:'center',
+    borderBottom:'solid 1px #e2e2e2',
+    boxShadow: '3px 7px 14px 0px rgba(0,0,0,0.71)'
   },
   main:{
     width:'100%',
     height:'calc(100vh - 100px)',
     display:'flex',
     justifyContent:'center',
-    alignItems:'center'
-  },
-  settings:{
-    width:'90%',
-    height:'90%',
-    backgroundColor:"#f1f1f1",
-    display:'flex',
-    position:'relative',
-  },
-  settingsLeft:{
-    width:'30%',
-    height:'100%',
-    backgroundColor:'#e2e2e2',
-    zIndex:'1',
-    border:"solid 1px black",
-    borderRadius:'20px',
-  },
-  settingsRight:{
-    width:'80%',
-    height:'100%',
-    backgroundColor:'grey',
-    zIndex:'2',
-    border:"solid 1px black",
-    borderRadius:'20px',
-    position:'absolute',
-    right:'0px'
-
+    alignItems:'center',
+    backgroundColor:'#F4F6FA'
   }
 }));
 
@@ -58,14 +39,11 @@ function TopBar() {
             <Grid item xs={12}>
               <div className={classes.root}>
                 <div className={classes.nav}>
+                    <MenuIcon style={{ fontSize: 40,padding:'0 10px 0 10px' }}/>
+                  <h1>Admin Dashboard</h1>
                 </div>
                 <div className={classes.main}> 
-                  <div className={classes.settings}>
-                    <div className={classes.settingsLeft}>
-                    </div>
-                    <div className={classes.settingsRight}>
-                    </div>
-                  </div>
+                   <Settings />
                 </div>
               </div>
             </Grid>
